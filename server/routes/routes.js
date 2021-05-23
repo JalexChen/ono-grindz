@@ -2,7 +2,7 @@ const express = require('express');
 const searchControllers = require('../controllers/searchControllers');
 const router = express.Router();
 
-router.get('/search',
+router.post('/search',
   searchControllers.sendUserSearch,
   searchControllers.sendID,
  (req, res) => {
@@ -13,8 +13,10 @@ router.get('/search',
 
 //this is what we save in db
 router.post('/subscribe')
+
 //will be sending the user all there subs
-router.get('/')
+router.post('/')
+
 //process client unsubscribe
 router.delete('/unsubscribe')
 

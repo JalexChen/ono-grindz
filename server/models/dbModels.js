@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { findByIdAndRemove } = require('../../../Week-5/database-assessment/StudentModel');
 const Schema = mongoose.Schema;
 const MONGO_URI = 'mongodb+srv://onoGrindz:onoGrindz@onogrindz.kgcfk.mongodb.net/retryWrites=true&w=majority';
 
@@ -16,27 +17,9 @@ mongoose.connect(MONGO_URI, {
     console.log(`Error connecting to Mongo DB: ${err}`);
   });
 
-<<<<<<< HEAD
-  const restaurantSchema = new Schema({
-    id: { type: String },
-    name: { type: String, required: true },
-    display_phone: { type: String },
-    location: {
-      address1: { type: String },
-      city: { type: String },
-      zip_code:{ type: String }
-    },
-    coordinates: {
-      lat: { type: Number, required: true },
-      lng: { type: Number, required: true },
-    },
-    photos: [],
-    hours: [],
-    special_hours: [],
-=======
 const restaurantSchema = new Schema({
   id: { type: String},
-  name: { type: String, required: true },
+  name: { type: String, required: true }, 
   display_phone: { type: String },
   location: {
     address1: { type: String },
@@ -55,7 +38,6 @@ const restaurantSchema = new Schema({
 const userSchema = new Schema({
   email: { type: String, required: true },
   subscription: [restaurantSchema]
->>>>>>> 12021b22f2ece909f07e5b0814097026a5e45fb5
   });
 
 const User = mongoose.model('Grindz', userSchema);
