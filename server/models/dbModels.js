@@ -21,6 +21,7 @@ mongoose.connect(MONGO_URI, {
   });
 
   const restaurantSchema = new Schema({
+    id: { type: String },
     name: { type: String, required: true },
     display_phone: { type: String },
     location: {
