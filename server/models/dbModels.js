@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { findByIdAndRemove } = require('../../../Week-5/database-assessment/StudentModel');
 const Schema = mongoose.Schema;
 const MONGO_URI = 'mongodb+srv://onoGrindz:onoGrindz@onogrindz.kgcfk.mongodb.net/retryWrites=true&w=majority';
 
