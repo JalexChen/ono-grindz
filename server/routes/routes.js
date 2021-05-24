@@ -13,11 +13,6 @@ searchControllers.sendID,
 }
 );
 
-<<<<<<< HEAD
-//this is what we save in db
-router.post('/subscribe')
-
-=======
 // client will send a request to '/api/subscribe' after the user has selected their restaurants and clicked the subscribe button. The data received will be either in form of object or array of restaurant IDs
 // this is what we save in db
 
@@ -30,7 +25,6 @@ router.use('/subscribe',
     res.status(200).json('Subscribed!')
   }
 )
->>>>>>> c8e3298819f350ed2894c20adbef5bb68d86f409
 //will be sending the user all there subs
 router.post('/')
 

@@ -30,12 +30,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "core-util-is": "^1.0.2",
-=======
     "@react-google-maps/api": "^2.2.0",
     "cron": "^1.8.2",
->>>>>>> c8e3298819f350ed2894c20adbef5bb68d86f409
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "mongoose": "^5.12.10",
