@@ -3,7 +3,7 @@ const db = require('../models/dbModels');
 const app = express();
 const yelp = require('yelp-fusion');
 const API_KEY = require('../../security/key')
-const client = yelp.client('FcwzVNzsVl_uQ2QdwZ5bkNZZp2d5zqBOB42D2SAzmtDgCLK0XxeClOD9F4aFyZcn58z0EjAKr8oRCKVje3z2hJwUHKbwUpOAYYoN_wAVYhinn0a0PN0YCX4txlCpYHYx');
+const client = yelp.client(API_KEY.yelpKey);
 
 const searchControllers = {};
 

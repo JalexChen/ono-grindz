@@ -39,7 +39,7 @@ const userSchema = new Schema({
   subscription: {
     restaurantSchema
   }
-  });
+});
 
 const User = mongoose.model('Grindz', userSchema);
 const Restaurants = mongoose.model('Restaurants', restaurantSchema);
