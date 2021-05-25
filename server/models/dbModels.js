@@ -35,13 +35,19 @@ const restaurantSchema = new Schema({
 });
 
 const userSchema = new Schema({
+<<<<<<< HEAD
   email: { type: String, required: true },
   subscription: {
     restaurantSchema
   }
 });
+=======
+  email: { type: String, required: true, unique: true},
+  subscription: {},
+  });
+>>>>>>> 44db9b402536be4aa3737a14bb0173a9132a0088
 
-const User = mongoose.model('Grindz', userSchema);
+const User = mongoose.model('User', userSchema);
 const Restaurants = mongoose.model('Restaurants', restaurantSchema);
 
 module.exports = {
