@@ -134,16 +134,12 @@ subscriptionController.scheduleEmails = (req, res, next) => {
 };
 
 
-subscriptionController.createUser = (req,res,next) => {
+subscriptionController.createUser = (req, res, next) => {
   const subs = {};
-  for(const [key, value] of Object.entries(res.locals.details)){
-    // console.log('key',key);
-    // console.log('value',value);
+  for(const [key, value] of Object.entries(res.locals.details)) {
     subs[value.id] = value;
   }
-  
-  const query = db.User.findOneAndUpdate({email: req.body.email}, { email:req.body.email, subscription: subs},{upsert: true, new: true});
-  
+  const query = db.User.findOneAndUpdate({ email: req.body.email }, { email:req.body.email, subscription: subs },{ upsert: true, new: true });  
   query.then((data)=>{
     console.log(data)
     return next();
@@ -155,7 +151,7 @@ subscriptionController.createUser = (req,res,next) => {
 };
 
 // method to get one user document
-subscriptionController.findUser = (req,res,next) => {
+subscriptionController.findUser = (req, res, next) => {
   const {email} = req.body
   const query = db.User.find({email: email}, {useFindAndModify: false})
   query.then((data)=>{
@@ -170,7 +166,7 @@ subscriptionController.findUser = (req,res,next) => {
 };
 
 // Method to delete subscription in user object
-subscriptionController.deleteSubscription = (req,res,next) => {
+subscriptionController.deleteSubscription = (req, res, next) => {
   // Create a find query that filters by email, save the returned document into a variable, this is already done by subscriptionController.findUser
   // const document = res.locals.user;
   // const {id} = req.body

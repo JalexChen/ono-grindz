@@ -36,14 +36,15 @@ searchControllers.sendUserSearch = (req, res, next) => {
       res.locals.ids = results
       return next()
     }
-// invoking the next callback function
-    )
+  )
     .catch(err => {
       return next('Error: error in searchControllers.sendUserSearch')
     })
   })
 }
 
+// necessary to use Promise.all as a result of multiple async calls being passed
+// Promise all resolves all async processes then sends the finished result down
 searchControllers.sendID = (req, res, next) => {
    Promise.all(res.locals.ids.map(id => anAsyncFunction(client.business(id))))
     .then((data) => {
@@ -58,14 +59,5 @@ searchControllers.sendID = (req, res, next) => {
       return next(err);
     })
   };
-
-//subscribe
-
-
-//Client ID
-//TGFWJiF1cChXSQp_usubUQ
-
-//API Key
-//FcwzVNzsVl_uQ2QdwZ5bkNZZp2d5zqBOB42D2SAzmtDgCLK0XxeClOD9F4aFyZcn58z0EjAKr8oRCKVje3z2hJwUHKbwUpOAYYoN_wAVYhinn0a0PN0YCX4txlCpYHYx
 
 module.exports = searchControllers

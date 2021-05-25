@@ -16,47 +16,13 @@ mongoose.connect(MONGO_URI, {
     console.log(`Error connecting to Mongo DB: ${err}`);
   });
 
-const restaurantSchema = new Schema({
-  id: { type: String},
-  name: { type: String, required: true }, 
-  display_phone: { type: String },
-  location: {
-    address1: { type: String },
-    city: { type: String },
-    zip_code:{ type: String }
-  },
-  coordinates: {
-    lat: { type: Number, required: true },
-    lng: { type: Number, required: true },
-  },
-  photos: [],
-  hours: [],
-  special_hours: [],
-});
-
 const userSchema = new Schema({
-<<<<<<< HEAD
-  email: { type: String, required: true },
-  subscription: {
-    restaurantSchema
-  }
-});
-=======
   email: { type: String, required: true, unique: true},
   subscription: {},
   });
->>>>>>> 44db9b402536be4aa3737a14bb0173a9132a0088
 
 const User = mongoose.model('User', userSchema);
-const Restaurants = mongoose.model('Restaurants', restaurantSchema);
 
 module.exports = {
-    User,
-    Restaurants,
+    User
 }
-
-//user: onoGrindz
-//pw: onoGrindz
-
-//gmail: csbigtassels@gmail.com
-//pw: codesmith
