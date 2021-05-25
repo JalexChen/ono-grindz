@@ -25,4 +25,8 @@ const User = mongoose.model('User', userSchema);
 
 module.exports = {
     User
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7a15fdfb690395f67c140216b1654ed6529adac3
